@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Namdhinggo:wght@400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap');
+
+.namdhinggo-medium {
+  font-family: "Namdhinggo", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.namdhinggo-bold {
+  font-family: "Namdhinggo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.namdhinggo-extrabold {
+  font-family: "Namdhinggo", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Inter Font */
+.inter-light {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inter-regular {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-medium {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-semibold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg); 
+  }
+}
+
+.logo-spin {
+  animation: logo-spin infinite 3s linear;
+}
+
+
+
+ .circle3
+        {
+            position: absolute;
+            margin: auto;
+            margin-top: 35px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 201, 201);
+            border-radius: 0px 50px 0px 15px;
+            transition: all 0.5s;
+            
+        }
+        .spectacledcoder-card3:hover .circle3
+        {
+            margin-top: 0px;
+            background-color: rgb(255, 201, 201);
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            transition: all 0.5s;
+        }
+        .content
+        {
+            margin: auto;
+            z-index: 100;
+            color: black;
+            font-weight: 500;
+        }
+        @media only screen and (max-width: 600px) 
+        {
+            body
+            {
+                flex-direction: column;
+            }
+        }
+        .spectacledcoder-card1 img
+        {
+            position: absolute;
+            margin: auto;
+            padding-top: 8px;
+            padding-right: 8px;
+        }
+        .spectacledcoder-card2 img
+        {
+            position: absolute;
+            margin: auto;
+            margin-top: 35px;
+            padding-top: 12px;
+        }
+        .spectacledcoder-card3 img
+        {
+            position: absolute;
+            margin: auto;
+            padding-left: 8px;
+            padding-bottom: 8px;
+        }
+        .disclaimer
+        {
+            position: absolute;
+            bottom: 0px; 
+            left: 0; 
+            margin-left: auto; 
+            right: 0; 
+            margin-right: auto; 
+            width: fit-content;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        .disclaimer a
+        {
+            text-decoration: none;
+            color: #202020;
+            font-weight: 900;
+        }
+        .disclaimer a:hover
+        {
+            text-decoration: overline;
+        }
