@@ -35,13 +35,13 @@ const Footer = () => {
             <h3 className="text-xl poppins-bold mb-8">Key Dates</h3>
             <div className="flex flex-col space-y-2 text-gray-300 poppins-medium">
               <div className="">
-                <p className="text-base">Paper Submission : November 20, 2025</p>
+                <p className="text-base">Paper Submission : February 4, 2025</p>
               </div>
               <div className="">
-                <p className="text-base">Registration Deadline : November 27, 2025</p>
+                <p className="text-base">Registration Deadline : February 21, 2025</p>
               </div>
               <div className="">
-                <p className="text-base">Conference Dates : December 10, 2025</p>
+                <p className="text-base">Conference Dates : February 28, 2025</p>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ const Footer = () => {
           <p>
          © 2025 {' '}
             <Link href="/" className="hover:text-yellow-400 transition-colors  cursor-pointer poppins-medium" rel="noopener noreferrer">
-                 ICBAMS .
+                 ICABCIC .
             </Link>{' '}
             All Rights Reserved.
           </p>
