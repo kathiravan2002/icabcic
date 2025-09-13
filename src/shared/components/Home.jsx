@@ -2,11 +2,12 @@ import React from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 import { BsCalendar4Range, BsFillClockFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import { FaArrowRightLong, FaCalendarDays, FaLocationDot } from 'react-icons/fa6';
+import { FaArrowRightLong, FaCalendarDays, FaCircleUser, FaLocationDot } from 'react-icons/fa6';
 import { TbPointFilled } from 'react-icons/tb';
 import { FaBullhorn, FaUsersLine, FaMicrophone } from 'react-icons/fa6';
 import { FaCalendar, FaPaperclip, FaComment, FaAddressCard } from 'react-icons/fa';
 import { FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
+import Marquee from 'react-fast-marquee';
 
 function Home() {
 
@@ -83,16 +84,234 @@ function Home() {
             image: '/images/key_invitees_avatar.webp',
         },
     ];
+    const imageItems = [
+        { src: '/images/associates/1.png', },
+        { src: '/images/associates/2.jpg', },
+        { src: '/images/associates/3.jpg', },
+        { src: '/images/associates/4.jpg', },
+        { src: '/images/associates/5.jpg', },
+        { src: '/images/associates/6.jpg', },
+        { src: "/images/associates/scopus.png", },
+        { src: "/images/associates/8.jpg", },
+        { src: "/images/associates/9.jpg", },
+        { src: "/images/associates/10.jpg", },
+        { src: "/images/associates/11.jpg", },
+    ];
+
+    // const boardMembers = [
+    //     {
+    //         name: "Dr. Priyanka Ganapathy",
+    //         university: "Sree Balaji Medical College And Hospital",
+    //         expertise: "Department of Physiology",
+    //         country: " India"
+    //     },
+
+    //     {
+    //         name: "Dr. Shakar Ahmed Aziz",
+    //         university: "Duhok University",
+    //         expertise: " Department of Mathematics",
+    //         country: "  Iraq"
+    //     },
+    //     {
+    //         name: "Dr. Satyabrata Roy",
+    //         university: "Manipal University Jaipur",
+    //         expertise: "Department of CSE",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr. Sukant Kishoro Bisoy",
+    //         university: "C V Raman Global University Bhubaneswar",
+    //         expertise: " Department of CSE ",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr. Asghar Ali Shah",
+    //         university: " Bahria university",
+    //         expertise: " Department of CSE",
+    //         country: " Pakistan"
+    //     },
+    //     {
+    //         name: "Dr. Subhash Panwar",
+    //         university: "  Govt. Engineering College Bikaner",
+    //         expertise: " Department of CSE",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr. Ernesto Carrillo Arellano",
+    //         university: "Metropolitan Autonomous University",
+    //         expertise: "Department of ECE",
+    //         country: " Mexico"
+    //     },
+    //     {
+    //         name: "Dr.A. Karthikeyan ",
+    //         university: "SNS College of Technology",
+    //         expertise: "Department of ECE",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr. Badamsi Sani Mohammed",
+    //         university: "Al - Qalam University Katsina",
+    //         expertise: " Department of Economics",
+    //         country: " Nigeria"
+    //     },
+    //     {
+    //         name: "Dr. BalaAnand Muthu",
+    //         university: "Adhiyamaan College of Engineering",
+    //         expertise: "  Department of CSE",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr. Theopilus Bayu Sasongko",
+    //         university: "University of Amikom Yogyakarta",
+    //         expertise: " Department of Informatics",
+    //         country: " Indonesia"
+    //     },
+    //     {
+    //         name: "Dr. Qiushi Yang",
+    //         university: "Babcock University",
+    //         expertise: " Department of ECE",
+    //         country: " China"
+    //     },
+    //     {
+    //         name: "Dr.  Tusar Kanti Dash",
+    //         university: "C V Raman Global University",
+    //         expertise: " Department of ECE",
+    //         country: " India"
+    //     },
+
+    //     {
+    //         name: "Dr. Muhammad Suleman Memon",
+    //         university: " University of Sindh",
+    //         expertise: " Department of IT",
+    //         country: " Pakistan"
+    //     },
+    //     {
+    //         name: "Dr.S. Gopinath ",
+    //         university: " Gnanamani college of technology",
+    //         expertise: " Department of CSE",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr.Md. Nahiduzzaman",
+    //         university: " Rajshahi University of Engineering and Technology",
+    //         expertise: " Department of ECE",
+    //         country: " Bangladesh"
+    //     },
+    //     {
+    //         name: "Dr. Asma Sbeih",
+    //         university: " Palestine Ahliya university",
+    //         expertise: " Department of IT",
+    //         country: " Palestine"
+    //     },
+    //     {
+    //         name: "Dr. Laiphrakpam Dolendro Singh",
+    //         university: " National Institute of Technology Silchar",
+    //         expertise: " Department of CSE",
+    //         country: " India"
+    //     },
+    //     {
+    //         name: "Dr.R. Arun Kumar",
+    //         university: " University of South Wales",
+    //         expertise: " Department of Cybersecurity",
+    //         country: " United Kingdom"
+    //     },
+    //     {
+    //         name: "Dr. Sakthivel Velusamy",
+    //         university: " Sathyabama institute of science and technology",
+    //         expertise: " Department of CSE",
+    //         country: " South Korea"
+    //     },
+
+    // ];
 
 
-    const boardMembers = [
+
+    const organizing = [
+
         {
-            name: "Dr. Priyanka Ganapathy",
-            university: "Sree Balaji Medical College And Hospital",
-            expertise: "Department of Physiology",
-            country: " India"
+            name: "Dr. Monday Fredrick Ohemu",
+            university: "  Airforce Institute of Technology",
+            expertise: " Department of  Electrical and Electronics Engineering",
+            country: "Nigeria"
+        },
+        {
+            name: "Dr. Kolawole Yusuf Obiwusi",
+            university: "Summit University",
+            expertise: " Department of Mathematics and Computer Science",
+            country: "Nigeria"
         },
 
+        {
+            name: "Dr. Folasade M. Dahunsi",
+            university: "Federal University of Technology",
+            expertise: " Department of Computer Science and Engineering",
+            country: "Nigeria"
+        },
+        {
+            name: "Dr. Egoigwe Sochima Vincent",
+            university: "University of Nigeria",
+            expertise: " Department of Computer Science",
+            country: " Nigeria "
+        },
+
+        {
+            name: "Dr. Oladapo Ibitoye",
+            university: "Afe Babalola University",
+            expertise: "Department of Electrical, Electronics and Computer Engineering",
+            country: " Nigeria"
+        },
+    ]
+
+    const technical = [
+
+        {
+            name: "Dr. Leo John Baptist",
+            university: "Botho University",
+            expertise: "Department of Information Technology",
+            country: " Botswana"
+        },
+        {
+            name: "Dr. Sowmipriya Rajendiran",
+            university: "International School of Information Processing Sciences",
+            expertise: "Department of Computer Science and Engineering ",
+            country: "France"
+        },
+        {
+            name: "Dr. Comfort O. Folorunso",
+            university: " University of Lagos",
+            expertise: "Department of Systems Engineering",
+            country: " Nigeria"
+        },
+        {
+            name: "Dr. Ledan Qian",
+            university: "  Wenzhou University",
+            expertise: " Department of Information Technology",
+            country: "China"
+        },
+        {
+            name: "Dr. Meenakshi Gupta",
+            university: " National University of Singapore",
+            expertise: " Department of Electronics and Communication Engineering",
+            country: "Singapore"
+        },
+        {
+            name: "Dr. Muhammad Asif Khan",
+            university: " Qatar University",
+            expertise: " Research Scientist at Qatar Mobility Innovations Center",
+            country: " Qatar"
+        },
+        {
+            name: "Dr. Ernesto Carrillo Arellano",
+            university: "Metropolitan Autonomous University",
+            expertise: "Department of Electronics Engineering",
+            country: "Mexico"
+        },
+        {
+            name: "Dr. Asma Sbeih",
+            university: "Palestine Ahliya University",
+            expertise: "Department of Information Technology ",
+            country: "Palestine"
+        },
         {
             name: "Dr. Shakar Ahmed Aziz",
             university: "Duhok University",
@@ -100,118 +319,248 @@ function Home() {
             country: "  Iraq"
         },
         {
-            name: "Dr. Satyabrata Roy",
-            university: "Manipal University Jaipur",
-            expertise: "Department of CSE",
+            name: "Dr. Putri Mentari Endraswari",
+            university: "  University of Bangka Belitung",
+            expertise: " Department of Information Technology",
+            country: "Indonesia"
+        },
+        {
+            name: "Dr. Nor Musliza Mustafa",
+            university: " Selangor Islamic University",
+            expertise: "Department of Creative Multimedia and Computing",
+            country: "Malaysia"
+        },
+        {
+            name: "Dr. Alma Bangayan Manera",
+            university: "Cagayan State University",
+            expertise: "Department of Electronics and Communication Engineering",
+            country: " Philippines"
+        },
+        {
+            name: "Dr. Stephen Obono Ekwe",
+            university: "  University of Cape Town",
+            expertise: " Department of Electrical Engineering",
+            country: " South Africa"
+        },
+        {
+            name: "Dr. Nguyen Van Thieu",
+            university: "Phenikaa University",
+            expertise: " Department of Computer Science",
+            country: "Vietnam"
+        },
+        {
+            name: "Dr.E. Kusuma kumari",
+            university: "Vasavi engineering college",
+            expertise: "Department of Electronics and Communication Engineering",
             country: " India"
         },
         {
-            name: "Dr. Sukant Kishoro Bisoy",
-            university: "C V Raman Global University Bhubaneswar",
-            expertise: " Department of CSE ",
+            name: "Dr. Nour Moustafa",
+            university: "American University of the Middle East",
+            expertise: "Department of Electronics and Communication Engineering",
+            country: " Kuwait"
+        },
+        {
+            name: "Dr.A. Gabriel ",
+            university: "Sharda University",
+            expertise: "Department of Information Technology ",
+            country: " Uzbekistan "
+        },
+        {
+            name: "Dr. Islam Zada",
+            university: "International Islamic University",
+            expertise: "Department of Software Engineering",
+            country: "Pakistan"
+        },
+        {
+            name: "Dr. Mohammad Javad Fadaeieslam",
+            university: "Semnan University",
+            expertise: " Department of Electrical and Computer Engineering",
+            country: " Iran"
+        },
+        {
+            name: "Dr.R. Arun Kumar",
+            university: "University of South Wales",
+            expertise: " Department of Digital Forensics & Cyber Security",
+            country: " United Kingdom"
+        }
+    ];
+
+
+    const editorial = [
+        {
+            name: "Dr. Puneet Sharma",
+            university: "  UiT The Arctic University of Norway",
+            expertise: " Department of Automation and Process Engineering",
+            country: " Norway"
+        },
+        {
+            name: "Dr. Marcelo M S Souza",
+            university: " Universidade Federal do Ceará",
+            expertise: "Department of Computer Science and Engineering ",
+            country: "Brazil"
+        },
+        {
+            name: "Dr. Zouhour El-Abiad",
+            university: "ESA Business School",
+            expertise: " Department of Computer Science and Engineering",
+            country: " Lebanon"
+        },
+        {
+            name: "Dr. Rahman Shafique",
+            university: " Yeungnam University",
+            expertise: " Department of Information and Communication Engineering",
+            country: " South Korea"
+        },
+        {
+            name: "Dr. Ajanthaa Lakkshmanan",
+            university: "Sathyabama institute of science and technology",
+            expertise: "Department of Computer Science and Engineering ",
             country: " India"
         },
         {
-            name: "Dr. Asghar Ali Shah",
-            university: " Bahria university",
-            expertise: " Department of CSE",
-            country: " Pakistan"
+            name: "Dr. Chinwe Peace Igiri",
+            university: "Cavendish University",
+            expertise: " Department of Computer Science and Engineering",
+            country: " Uganda"
         },
         {
-            name: "Dr. Subhash Panwar",
-            university: "  Govt. Engineering College Bikaner",
-            expertise: " Department of CSE",
+            name: "Dr. Aram Sabr Tahr",
+            university: "Cyprus International University",
+            expertise: "Department of Computer Science and Engineering ",
+            country: "Cyprus"
+        },
+        {
+            name: "Dr. Ammar Amjad",
+            university: " National Yang ming chiao tung university",
+            expertise: "Department of Computer Science and Engineering ",
+            country: "Taiwan"
+        },
+        {
+            name: "Dr. Argha Chandra Dhar",
+            university: "Khulna University of Engineering & Technology",
+            expertise: "Department of Computer Science and Engineering",
+            country: "Bangladesh"
+        },
+        {
+            name: "Dr. Mohammad Siraj",
+            university: "  King Saud University",
+            expertise: " Department of Electronics and Communication Engineering",
+            country: "Saudi Arabia"
+        },
+        {
+            name: "Dr. Omar Bin Samin",
+            university: " Institute of Management Sciences",
+            expertise: " Department of Information and Technology",
+            country: "Pakistan"
+        },
+        {
+            name: "Dr. Hung Nguyen",
+            university: "Nha Trang university",
+            expertise: " Department of Information Technology",
+            country: "Vietnam"
+        },
+        {
+            name: "Dr.M. Sathish kumar",
+            university: "Hindustan Institute of technology and science",
+            expertise: "Department of Computer Application",
             country: " India"
         },
         {
-            name: "Dr. Ernesto Carrillo Arellano",
-            university: "Metropolitan Autonomous University",
-            expertise: "Department of ECE",
-            country: " Mexico"
+            name: "Dr. Syed Asim Ali Shah",
+            university: "Bahria University",
+            expertise: " Department of Software Engineering",
+            country: "Pakistan"
         },
         {
-            name: "Dr.A. Karthikeyan ",
-            university: "SNS College of Technology",
-            expertise: "Department of ECE",
-            country: " India"
+            name: "Dr.  Huiliang Zhao",
+            university: "Guizhou minzu University",
+            expertise: " Department of product design",
+            country: "China"
         },
         {
-            name: "Dr. Badamsi Sani Mohammed",
-            university: "Al - Qalam University Katsina",
-            expertise: " Department of Economics",
-            country: " Nigeria"
+            name: "Dr. Qian Liu",
+            university: " Krirk University",
+            expertise: "Department of Information Technology",
+            country: "Thailand"
         },
         {
-            name: "Dr. BalaAnand Muthu",
-            university: "Adhiyamaan College of Engineering",
-            expertise: "  Department of CSE",
+            name: "Dr.T. Kalaikumaran",
+            university: "VSB College of Engineering Technical Campus",
+            expertise: "Department of Artificial Intelligence and Data Science",
             country: " India"
         },
         {
             name: "Dr. Theopilus Bayu Sasongko",
-            university: "University of Amikom Yogyakarta",
+            university: " Universitas Amikom Yogyakarta",
             expertise: " Department of Informatics",
-            country: " Indonesia"
+            country: "Indonesia"
         },
         {
-            name: "Dr. Qiushi Yang",
-            university: "Babcock University",
-            expertise: " Department of ECE",
-            country: " China"
+            name: "Dr. Saminda Premaratne",
+            university: " University of Moratuwa",
+            expertise: "   Department of Information Technology",
+            country: "Sri Lanka"
         },
         {
-            name: "Dr.  Tusar Kanti Dash",
-            university: "C V Raman Global University",
-            expertise: " Department of ECE",
-            country: " India"
-        },
-
-        {
-            name: "Dr. Muhammad Suleman Memon",
-            university: " University of Sindh",
-            expertise: " Department of IT",
-            country: " Pakistan"
-        },
-        {
-            name: "Dr.S. Gopinath ",
-            university: " Gnanamani college of technology",
-            expertise: " Department of CSE",
+            name: "Dr.K. Kishore Kumar",
+            university: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology",
+            expertise: "Department of Computer Science and Engineering",
             country: " India"
         },
         {
-            name: "Dr.Md. Nahiduzzaman",
-            university: " Rajshahi University of Engineering and Technology",
-            expertise: " Department of ECE",
-            country: " Bangladesh"
+            name: "Dr. Kabelo Given Chuma",
+            university: " University of South Africa",
+            expertise: " Department of Information Science",
+            country: "South Africa"
         },
         {
-            name: "Dr. Asma Sbeih",
-            university: " Palestine Ahliya university",
-            expertise: " Department of IT",
-            country: " Palestine"
+            name: "Dr. Alven Ritonga",
+            university: " Universitas Wijaya Putra",
+            expertise: "Department of Electronics and Communication Engineering",
+            country: "Indonesia"
         },
         {
-            name: "Dr. Laiphrakpam Dolendro Singh",
-            university: " National Institute of Technology Silchar",
-            expertise: " Department of CSE",
-            country: " India"
+            name: "Dr. Twana A. Hamad",
+            university: " Harran University",
+            expertise: "Department of Electronics and Communication Engineering",
+            country: "Turkiye"
         },
         {
-            name: "Dr.R. Arun Kumar",
-            university: " University of South Wales",
-            expertise: " Department of Cybersecurity",
-            country: " United Kingdom"
+            name: "Dr. Ali Rizwan",
+            university: "King Abdulaziz University",
+            expertise: " Department of Industrial Engineering",
+            country: " Saudi Arabia"
         },
         {
-            name: "Dr. Sakthivel Velusamy",
-            university: " Sathyabama institute of science and technology",
-            expertise: " Department of CSE",
+            name: "Dr. Yogi Pratama",
+            university: " Al Insyirah Institute of Health and Technology",
+            expertise: " Department of Medical Informatics",
+            country: "Indonesia"
+        },
+        {
+            name: "Dr.  Sakthivel Velusamy",
+            university: " Konkuk University",
+            expertise: " Department of Aerospace Information Engineering",
             country: " South Korea"
         },
-       
-       
-     
+        {
+            name: "Dr. Leandro N. Balico",
+            university: "  Federal University of Roraima",
+            expertise: " Department of Computer Science and Engineering ",
+            country: "Brazil"
+        },
+        {
+            name: "Dr. Wasan Alamro",
+            university: "Auckland University of Technology",
+            expertise: "Department of Electrical and Electronics Engineering department ",
+            country: " New Zealand"
+        }
     ];
+
+
+
+
 
     return (
         <div >
@@ -256,7 +605,7 @@ function Home() {
                             <span className="opacity-70">The</span> <span className="poppins-bold text-[#1e1b4b] ">1st International Conference on Advances in Big Data, Cloud, and Intelligent Computing </span> <span className="opacity-70">is a pioneering event designed to bring together researchers, industry experts, and technology enthusiasts. Organized in collaboration with leading institutions, this conference will serve as a global platform for discussing breakthroughs in </span><span className="poppins-bold text-[#1e1b4b] ">Big Data, Cloud Computing, and Artificial Intelligence</span>.
                         </p>
                         <p className="lg:text-lg text-lg lg:leading-[40px] leading-[30px] text-justify poppins-medium mt-4">
-                            <span className="opacity-70">As our inaugural conference, ICABCIC-2025 will feature </span><span className="poppins-bold text-[#1e1b4b] ">keynote speeches, technical sessions, and workshops</span><span className="opacity-70">, fostering knowledge exchange on emerging trends. Participants will have the opportunity to present research, engage in discussions, and explore advancements in </span><span className="poppins-bold text-[#1e1b4b] ">data science, cloud architectures, and AI-driven innovations</span><span className="opacity-70">. We aim to establish ICABCIC as an annual forum that bridges academia and industry, contributing to the evolution of </span><span className="poppins-bold text-[#1e1b4b] ">intelligent computing and digital transformation</span><span className="opacity-70">. Join us in shaping this milestone event and be part of the conversation that will drive future technological progress.</span>
+                            <span className="opacity-70">As our inaugural conference, ICABCIC-2025 will feature </span><span className="poppins-bold text-[#1e1b4b] ">keynote speeches, technical sessions, and workshops</span><span className="opacity-70">, fostering knowledge exchange on emerging trends. Participants will have the opportunity to present research, engage in discussions, and explore advancements in </span><span className="poppins-bold text-[#1e1b4b] ">data science, cloud architectures, and AI-driven innovations</span><span className="opacity-70">. We aim to establish ICABCIC as an annual forum that bridges academia and industry, contributing to the evolution of </span><span className="poppins-bold text-[#1e1b4b] ">intelligent computing and digital transformation</span><span className="opacity-70">. Join us in shaping this milestone event and be part of the conversation that will drive future technological progress.The Selective accepted papers of our International Conference on Advances in Big Data, Cloud, and Intelligent Computing will be recommended to publish in the indexed Journals.</span>
                         </p>
                     </div>
 
@@ -384,9 +733,10 @@ function Home() {
             </div> */}
 
 
-            <section id="committee" className=" bg-white  scroll-mt-[120px]">
+
+
+            {/* <section id="committee" className=" bg-white  scroll-mt-[120px]">
                 <div className="container mx-auto px-4">
-                    {/* Heading */}
                     <div className="text-center mb-12">
                         <h2 className="text-2xl text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8">
                             Organizing Committee
@@ -396,8 +746,7 @@ function Home() {
                         </p>
                     </div>
 
-                    {/* Cards Grid */}
-                    {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {committeeMembers.map((member, index) => (
                             <div
                                 key={index}
@@ -415,29 +764,78 @@ function Home() {
                                 </div>
                             </div>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
 
-                {/* Decorative divider */}
                 <div className="container mx-auto px-4 py-8 lg:py-10 xl:py-10 2xl:py-16">
                     <div className="w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
                 </div>
-            </section>
+            </section> */}
 
-            <section id="board" className="bg-white  scroll-mt-[120px]">
+            <section className="bg-white  ">
                 <div className="container mx-auto">
                     <div className="bg-white text-black py-3">
                         <div className="container mx-auto px-4">
-                            <div className="text-center mb-12">
+                            {/* <div className="text-center mb-12">
                                 <div className="text-2xl text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8">
                                     Editorial Board
                                 </div>
                                 <p className="lg:text-lg text-lg lg:leading-[40px] leading-[30px] text-justify poppins-medium">
                                     <span className="opacity-70"> The </span><span className="poppins-bold text-[#1e1b4b] ">Editorial Board</span><span className="opacity-70"> of the </span><span className="poppins-bold text-[#1e1b4b] ">International Conference on Advances in Big Data, Cloud, and Intelligent Computing</span> <span className="opacity-70">consists of leading </span><span className="poppins-bold text-[#1e1b4b] ">experts</span> <span className="opacity-70">in Big Data, Cloud Computing, and Intelligent Systems. They ensure all research papers meet</span><span className="poppins-bold text-[#1e1b4b] "> high academic and ethical standards</span><span className="opacity-70">, supporting the conference's goals. With their deep</span> <span className="poppins-bold text-[#1e1b4b] ">knowledge</span> <span className="opacity-70">and</span> <span className="poppins-bold text-[#1e1b4b] ">experience</span><span className="opacity-70">, the board ensures that accepted papers are</span> <span className="poppins-bold text-[#1e1b4b] ">valuable, accurate, and relevant</span> <span className="opacity-70">to the research community. The board oversees the </span><span className="poppins-bold text-[#1e1b4b] ">review process</span><span className="opacity-70">, provides constructive feedback, and ensures a </span><span className="poppins-bold text-[#1e1b4b] ">thorough peer-review</span> <span className="opacity-70">for each submission. Their commitment maintains the conference's </span><span className="poppins-bold text-[#1e1b4b] ">credibility</span><span className="opacity-70"> and influence in the field.</span>
                                 </p>
-                            </div>
-
-                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            </div> */}
+                            <section className="scroll-mt-[120px]" id="committee">
+                                <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8 " >
+                                    Organizing Committee
+                                </h2>
+                                <div className='pb-10'>
+                                    <div className="max-w-[1300px] mx-auto mt-5 px-2">
+                                        <div className="space-y-2">
+                                            {organizing.map((item, index) => (
+                                                <div key={index} className="flex gap-2 items-center">
+                                                    <FaCircleUser className='text-[18px] flex shrink-0 text-[#1e1b4b]' />
+                                                    <p className="leading-relaxed "><span className=" text-[#1e1b4b] text-[16px] poppins-semibold  text-center ">{item.name} - </span><span className="text-[16px] poppins-medium   text-center opacity-80">{item.expertise}, </span><span className="text-[16px] poppins-medium text-center opacity-80">{item.university}, </span><span className="text-[16px] poppins-medium text-center opacity-80">{item.country}.</span></p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section className="scroll-mt-[120px]" id="technical">
+                                <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8 scroll-mt-[120px]" >
+                                    Technical Program Committee
+                                </h2>
+                                <div className='pb-10'>
+                                    <div className="max-w-[1300px] mx-auto mt-5 px-2">
+                                        <div className="space-y-2">
+                                            {technical.map((item, index) => (
+                                                <div key={index} className="flex gap-2 items-center">
+                                                    <FaCircleUser className='text-[18px] flex shrink-0 text-[#1e1b4b]' />
+                                                    <p className="leading-relaxed "><span className=" text-[#1e1b4b] text-[16px] poppins-semibold  text-center ">{item.name} - </span><span className="text-[16px] poppins-medium   text-center opacity-80">{item.expertise}, </span><span className="text-[16px] poppins-medium text-center opacity-80">{item.university}, </span><span className="text-[16px] poppins-medium text-center opacity-80">{item.country}.</span></p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section className="scroll-mt-[120px]" id="board">
+                                <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8 scroll-mt-[120px]" >
+                                    International Advisory Board Committee Members
+                                </h2>
+                                <div className='pb-10'>
+                                    <div className="max-w-[1300px] mx-auto mt-5 px-2">
+                                        <div className="space-y-2">
+                                            {editorial.map((item, index) => (
+                                                <div key={index} className="flex gap-2 items-center">
+                                                    <FaCircleUser className='text-[18px] flex shrink-0 text-[#1e1b4b]' />
+                                                    <p className="leading-relaxed "><span className=" text-[#1e1b4b] text-[16px] poppins-semibold  text-center ">{item.name} - </span><span className="text-[16px] inter-medium   text-center opacity-80">{item.expertise}, </span><span className="text-[16px] poppins-medium text-center opacity-80">{item.university}, </span><span className="text-[16px] poppins-medium text-center opacity-80">{item.country}.</span></p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {boardMembers.map((member, index) => (
                                     <div
                                         key={index}
@@ -471,7 +869,7 @@ function Home() {
                                         </div>
                                     </div>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
@@ -546,7 +944,7 @@ function Home() {
                         <div className="text-2xl text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8">
                             Key Dates
                         </div>
-                        <p className="lg:text-lg text-lg lg:leading-[40px] leading-[30px] text-justify poppins-medium"><span className="poppins-bold text-[#1e1b4b] ">Key Dates</span><span className="opacity-70"> for the</span><span className="poppins-bold text-[#1e1b4b] "> International Conference on Advances in Big Data, Cloud, and Intelligent Computing (ICABCIC) </span><span className="opacity-70"> are critical deadlines and milestones that participants must adhere  to. These include the</span> <span className="poppins-bold text-[#1e1b4b] ">paper submission deadline, notification of acceptance registration deadline and the conference dates</span><span className="opacity-70">. Staying informed about these dates ensures a smooth and organized participation process.</span>
+                        <p className="lg:text-lg text-lg lg:leading-[40px] leading-[30px] text-justify poppins-medium"><span className="poppins-bold text-[#1e1b4b] ">Key Dates</span><span className="opacity-70"> for the</span><span className="poppins-bold text-[#1e1b4b] "> International Conference on Advances in Big Data, Cloud, and Intelligent Computing </span><span className="opacity-70"> are critical deadlines and milestones that participants must adhere  to. These include the</span> <span className="poppins-bold text-[#1e1b4b] ">paper submission deadline, notification of acceptance registration deadline and the conference dates</span><span className="opacity-70">. Staying informed about these dates ensures a smooth and organized participation process.</span>
                         </p>
                     </div>
 
@@ -662,6 +1060,22 @@ function Home() {
                 </div>
             </section>
 
+            <div className="max-w-[1600px] mx-auto">
+                <div className=" pt-0 space-y-10   px-4">
+                    <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8">Indexed Journals</h2>
+                    <p className="text-center inter-medium opacity-85 text-[16px] leading-[30px] max-w-[1000px] mx-auto">The Selective accepted papers of our International Conference on Advances in Big Data, Cloud, and Intelligent Computing will be recommended to publish in the following index & publisher Journals.</p>
+                </div>
+                <Marquee direction='right' gradient pauseOnClick pauseOnHover>
+                    <div className="  flex  pb-10 pt-10 ">
+                        {imageItems.map((item, index) => (
+                            <div key={index} className=" flex justify-center mr-10  py-5" >
+                                <img src={item.src} alt="images" className=" w-[300px] rounded-lg shadow-[0_0_8px_rgba(0,0,0,0.15)] hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] transition duratiom-300" />
+                            </div>
+                        ))}
+                    </div>
+                </Marquee>
+
+            </div>
 
         </div>
     )

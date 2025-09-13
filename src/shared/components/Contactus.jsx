@@ -163,7 +163,7 @@ function Contactus() {
                         <p className="text-lg  poppins-medium text-[#1e1b4b] mb-4">
                             International Conference on Advances in Big Data, Cloud, and Intelligent Computing
                         </p>
-                        <p className="text-lg  text-[#1e1b4b] poppins-medium mb-4">Venue: Shinjuku, Japan</p>
+                        <p className="text-lg  text-[#1e1b4b] poppins-medium mb-4">Venue: Benin, Nigeria</p>
                         {/* <p className="text-lg  text-[#1e1b4b] poppins-medium mb-4">
                             Mobile:{' '}
                             <a href="tel:+911234567890" className="text-blue-500 text-lg  hover:text-blue-400">

@@ -1042,7 +1042,7 @@ function Header() {
     useEffect(() => {
         const handleScroll = () => {
             if (location.pathname === '/') {
-                const sections = ['home', 'aboutus', 'scope', 'committee', 'board', 'tracks', 'key'];
+                const sections = ['home', 'aboutus', 'scope', 'committee','technical', 'board', 'tracks', 'key'];
                 let currentSection = 'home';
 
                 for (const sectionId of sections) {
@@ -1114,7 +1114,7 @@ function Header() {
         setActiveSection(sectionId);
         
         // If clicking on a home page section while on a different route
-        if (location.pathname !== '/' && ['home', 'aboutus', 'scope', 'committee', 'board', 'tracks', 'key'].includes(sectionId)) {
+        if (location.pathname !== '/' && ['home', 'aboutus', 'scope', 'committee','technical', 'board', 'tracks', 'key'].includes(sectionId)) {
             // Use setTimeout to ensure navigation happens after state updates and page loads
             setTimeout(() => {
                 const element = document.getElementById(sectionId);
@@ -1170,7 +1170,7 @@ function Header() {
                             {/* About Us */}
                             <div className="relative w-full lg:w-auto" ref={aboutDropdownRef}>
                                 <div className={`flex py-2 items-center justify-center cursor-pointer hover:text-yellow-400 transition-colors ${
-                                    isActive === '/' && ['aboutus', 'scope', 'committee', 'board'].includes(activeSection) ? 'text-[#E5AE36]' : 'text-white'
+                                    isActive === '/' && ['aboutus', 'scope', 'committee','technical', 'board'].includes(activeSection) ? 'text-[#E5AE36]' : 'text-white'
                                 }`} onClick={() => handleDropdownClick('about')}>
                                     <span>About Us</span>
                                     <span className={`ml-2 transform transition-transform duration-300 ease-in-out ${activeDropdown === 'about' ? 'rotate-180' : ''}`}>
@@ -1208,6 +1208,15 @@ function Header() {
                                         }`}
                                     >
                                         Organizing Committee
+                                    </Link>
+                                    <Link 
+                                        to="/" 
+                                        onClick={() => handleLinkClick('technical')} 
+                                        className={`block px-4 py-2 hover:text-yellow-400 cursor-pointer ${
+                                            isLinkActive('section', 'technical') ? 'text-[#E5AE36]' : ''
+                                        }`}
+                                    >
+                                        Technical Committee
                                     </Link>
                                     <Link 
                                         to="/" 
@@ -1305,7 +1314,7 @@ function Header() {
                                 <div className="w-full" ref={aboutDropdownRef}>
                                     <div
                                         className={`flex items-center justify-between poppins-medium py-2 cursor-pointer ${
-                                            isActive === '/' && ['aboutus', 'scope', 'committee', 'board'].includes(activeSection) ? 'text-yellow-400' : 'text-white'
+                                            isActive === '/' && ['aboutus', 'scope', 'committee','technical', 'board'].includes(activeSection) ? 'text-yellow-400' : 'text-white'
                                         }`}
                                         onClick={() => handleDropdownClick('about')}
                                     >
@@ -1342,6 +1351,15 @@ function Header() {
                                                 }`}
                                             >
                                                 Organizing Committee
+                                            </Link>
+                                            <Link
+                                                to="/"
+                                                onClick={() => handleLinkClick('technical')}
+                                                className={`block py-2 px-4 hover:text-yellow-400 ${
+                                                    isLinkActive('section', 'technical') ? 'text-yellow-400' : ''
+                                                }`}
+                                            >
+                                                Technical Committee
                                             </Link>
                                             <Link
                                                 to="/"

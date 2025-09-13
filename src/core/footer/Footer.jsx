@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Contact Details */}
           <div className="flex flex-col items-center lg:items-start text-center poppins-medium sm:text-left space-y-4">
             <h3 className="text-xl poppins-bold mb-8">Contact Details</h3>
-            <p className="text-base lg:text-lg text-gray-300 mb-4">Venue: Shinjuku, Japan</p>
+            <p className="text-base lg:text-lg text-gray-300 mb-4">Venue: Benin, Nigeria</p>
             {/* <p className="text-base l text-gray-300 mb-4 poppins-medium">
               Mobile: <Link href="tel:+911234567890" className="hover:text-yellow-400 transition-colors cursor-pointer ">+91 10101 10101</Link>
             </p> */}
