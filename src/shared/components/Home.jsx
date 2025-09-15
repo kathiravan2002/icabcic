@@ -472,12 +472,7 @@ function Home() {
             expertise: " Department of Software Engineering",
             country: "Pakistan"
         },
-        {
-            name: "Dr.  Huiliang Zhao",
-            university: "Guizhou minzu University",
-            expertise: " Department of product design",
-            country: "China"
-        },
+        
         {
             name: "Dr. Qian Liu",
             university: " Krirk University",
