@@ -396,7 +396,7 @@ function Home() {
         },
         {
             name: "Dr. Marcelo M S Souza",
-            university: " Universidade Federal do Ceará",
+            university: " Universidade Federal Do Ceará",
             expertise: "Department of Computer Science and Engineering ",
             country: "Brazil"
         },
@@ -432,7 +432,7 @@ function Home() {
         },
         {
             name: "Dr. Ammar Amjad",
-            university: " National Yang ming chiao tung university",
+            university: " National Yang Ming Chiao Tung University",
             expertise: "Department of Computer Science and Engineering ",
             country: "Taiwan"
         },
@@ -499,7 +499,7 @@ function Home() {
         },
         {
             name: "Dr.K. Kishore Kumar",
-            university: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology",
+            university: "Vel Tech Rangarajan Dr.Sagunthala R & D Institute of Science and Technology",
             expertise: "Department of Computer Science and Engineering",
             country: " India"
         },
@@ -784,7 +784,7 @@ function Home() {
                                     Organizing Committee
                                 </h2>
                                 <div className='pb-10'>
-                                    <div className="max-w-[1300px] mx-auto mt-5 px-2">
+                                    <div className="max-w-[1300px] mx-auto mt-5 ">
                                         <div className="space-y-2">
                                             {organizing.map((item, index) => (
                                                 <div key={index} className="flex gap-2 items-center">
@@ -801,7 +801,7 @@ function Home() {
                                     Technical Program Committee
                                 </h2>
                                 <div className='pb-10'>
-                                    <div className="max-w-[1300px] mx-auto mt-5 px-2">
+                                    <div className="max-w-[1300px] mx-auto mt-5 ">
                                         <div className="space-y-2">
                                             {technical.map((item, index) => (
                                                 <div key={index} className="flex gap-2 items-center">
@@ -817,8 +817,8 @@ function Home() {
                                 <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8 scroll-mt-[120px]" >
                                     International Advisory Board Committee Members
                                 </h2>
-                                <div className='pb-10'>
-                                    <div className="max-w-[1300px] mx-auto mt-5 px-2">
+                                <div className='pb-0'>
+                                    <div className="max-w-[1300px] mx-auto mt-5 ">
                                         <div className="space-y-2">
                                             {editorial.map((item, index) => (
                                                 <div key={index} className="flex gap-2 items-center">
@@ -887,7 +887,7 @@ function Home() {
                     </p>
                 </div>
 
-                <div className="container mx-auto px-8 md:px-16 lg:px-36">
+                <div className="container mx-auto px-4 md:px-16 lg:px-36">
                     <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
 
                         {/* Track Card 1 */}
@@ -1060,7 +1060,7 @@ function Home() {
                     <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8">Indexed Journals</h2>
                     <p className="text-center inter-medium opacity-85 text-[16px] leading-[30px] max-w-[1000px] mx-auto">The Selective accepted papers of our International Conference on Advances in Big Data, Cloud, and Intelligent Computing will be recommended to publish in the following index & publisher Journals.</p>
                 </div>
-                <Marquee direction='right' gradient pauseOnClick pauseOnHover>
+                <Marquee direction='right'  pauseOnClick pauseOnHover>
                     <div className="  flex  pb-10 pt-10 ">
                         {imageItems.map((item, index) => (
                             <div key={index} className=" flex justify-center mr-10  py-5" >
