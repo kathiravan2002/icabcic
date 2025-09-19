@@ -35,13 +35,13 @@ const Footer = () => {
             <h3 className="text-xl poppins-bold mb-8">Key Dates</h3>
             <div className="flex flex-col space-y-2 text-gray-300 poppins-medium">
               <div className="">
-                <p className="text-base">Paper Submission : February 4, 2025</p>
+                <p className="text-base">Paper Submission : October 14, 2024</p>
               </div>
               <div className="">
-                <p className="text-base">Registration Deadline : February 21, 2025</p>
+                <p className="text-base">Registration Deadline : October 21, 2024</p>
               </div>
               <div className="">
-                <p className="text-base">Conference Dates : February 28, 2025</p>
+                <p className="text-base">Conference Dates : November 07, 2024</p>
               </div>
             </div>
           </div>

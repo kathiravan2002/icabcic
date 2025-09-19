@@ -949,25 +949,25 @@ function Home() {
                             {
                                 title: "Paper Submission",
                                 icon: FaPaperclip,
-                                date: "February 4, 2025",
+                                date: "October 14, 2024",
                                 color: "#3b82f6", // blue-500
                             },
                             {
                                 title: "Acceptance Notification",
                                 icon: FaComment,
-                                date: "February 14, 2025",
+                                date: "October 21, 2024",
                                 color: "#a855f7", // purple-500
                             },
                             {
                                 title: "Registration Deadline",
                                 icon: FaAddressCard,
-                                date: "February 21, 2025",
+                                date: "October 21, 2024",
                                 color: "#ec4899", // pink-500
                             },
                             {
                                 title: "Conference Dates",
                                 icon: FaCalendarDays,
-                                date: "February 28, 2025",
+                                date: "November 28, 2024",
                                 color: "#f43f5e", // rose-500
                             },
                         ].map((item, index) => (
