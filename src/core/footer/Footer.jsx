@@ -9,6 +9,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 text-lg">
           {/* Quick Link */}
           <div className="flex flex-col items-center lg:items-start poppins-medium text-center lg:text-left space-y-4">
+            <h2 className="text-xl poppins-bold mb-8">ICABCIC</h2>
+           <p className="text-base lg:text-lg text-gray-30 text-justify lg:pr-20">International Conference on Big Data, Cloud, and Intelligent Computing connects researchers and experts.</p>
+          </div>
+          <div className="flex flex-col items-center lg:items-start poppins-medium text-center lg:text-left space-y-4">
             <h2 className="text-xl poppins-bold mb-8">Quick Link</h2>
             <nav className="flex flex-col items-center text-base  lg:items-start space-y-2 text-gray-300 poppins-medium">
               <Link to="/" className="hover:text-yellow-400 transition-colors cursor-pointer" href="/">Home</Link>
@@ -30,21 +34,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Key Dates */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-4">
-            <h3 className="text-xl poppins-bold mb-8">Key Dates</h3>
-            <div className="flex flex-col space-y-2 text-gray-300 poppins-medium">
-              <div className="">
-                <p className="text-base">Paper Submission : October 14, 2024</p>
-              </div>
-              <div className="">
-                <p className="text-base">Registration Deadline : October 21, 2024</p>
-              </div>
-              <div className="">
-                <p className="text-base">Conference Dates : November 07, 2024</p>
-              </div>
-            </div>
-          </div>
+        
         </div>
 
         <hr className="border-gray-700 mb-8" />

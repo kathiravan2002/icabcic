@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoLocationSharp } from 'react-icons/io5'
 import { BsCalendar4Range, BsFillClockFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
@@ -10,6 +10,7 @@ import { FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
 import Marquee from 'react-fast-marquee';
 
 function Home() {
+    const [activeYear, setActiveYear] = useState("2025");
 
     const committeeMembers = [
         {
@@ -472,7 +473,7 @@ function Home() {
             expertise: " Department of Software Engineering",
             country: "Pakistan"
         },
-        
+
         {
             name: "Dr. Qian Liu",
             university: " Krirk University",
@@ -554,7 +555,60 @@ function Home() {
     ];
 
 
-
+    const datesData = {
+        "2025": [
+            {
+                title: "Paper Submission",
+                icon: FaPaperclip,
+                date: "January 10, 2025",
+                color: "#3b82f6",
+            },
+            {
+                title: "Acceptance Notification",
+                icon: FaComment,
+                date: "January 20, 2025",
+                color: "#a855f7",
+            },
+            {
+                title: "Registration Deadline",
+                icon: FaAddressCard,
+                date: "January 25, 2025",
+                color: "#ec4899",
+            },
+            {
+                title: "Conference Dates",
+                icon: FaCalendarDays,
+                date: "February 4, 2025",
+                color: "#f43f5e",
+            },
+        ],
+        "2024": [
+            {
+                title: "Paper Submission",
+                icon: FaPaperclip,
+                date: "October 18, 2024",
+                color: "#3b82f6",
+            },
+            {
+                title: "Acceptance Notification",
+                icon: FaComment,
+                date: "October 25, 2024",
+                color: "#a855f7",
+            },
+            {
+                title: "Registration Deadline",
+                icon: FaAddressCard,
+                date: "November 01, 2024",
+                color: "#ec4899",
+            },
+            {
+                title: "Conference Dates",
+                icon: FaCalendarDays,
+                date: "November 07, 2024",
+                color: "#f43f5e",
+            },
+        ],
+    };
 
 
     return (
@@ -597,7 +651,7 @@ function Home() {
                             About the Conference
                         </div>
                         <p className="lg:text-lg text-lg lg:leading-[40px] leading-[30px] text-justify poppins-medium">
-                            <span className="opacity-70">The</span> <span className="poppins-bold text-[#1e1b4b] ">1st International Conference on Advances in Big Data, Cloud, and Intelligent Computing </span> <span className="opacity-70">is a pioneering event designed to bring together researchers, industry experts, and technology enthusiasts. Organized in collaboration with leading institutions, this conference will serve as a global platform for discussing breakthroughs in </span><span className="poppins-bold text-[#1e1b4b] ">Big Data, Cloud Computing, and Artificial Intelligence</span>.
+                            <span className="opacity-70">The</span> <span className="poppins-bold text-[#1e1b4b] "> International Conference on Advances in Big Data, Cloud, and Intelligent Computing </span> <span className="opacity-70">is a pioneering event designed to bring together researchers, industry experts, and technology enthusiasts. Organized in collaboration with leading institutions, this conference will serve as a global platform for discussing breakthroughs in </span><span className="poppins-bold text-[#1e1b4b] ">Big Data, Cloud Computing, and Artificial Intelligence</span>.
                         </p>
                         <p className="lg:text-lg text-lg lg:leading-[40px] leading-[30px] text-justify poppins-medium mt-4">
                             <span className="opacity-70">As our inaugural conference, ICABCIC-2025 will feature </span><span className="poppins-bold text-[#1e1b4b] ">keynote speeches, technical sessions, and workshops</span><span className="opacity-70">, fostering knowledge exchange on emerging trends. Participants will have the opportunity to present research, engage in discussions, and explore advancements in </span><span className="poppins-bold text-[#1e1b4b] ">data science, cloud architectures, and AI-driven innovations</span><span className="opacity-70">. We aim to establish ICABCIC as an annual forum that bridges academia and industry, contributing to the evolution of </span><span className="poppins-bold text-[#1e1b4b] ">intelligent computing and digital transformation</span><span className="opacity-70">. Join us in shaping this milestone event and be part of the conversation that will drive future technological progress.The Selective accepted papers of our International Conference on Advances in Big Data, Cloud, and Intelligent Computing will be recommended to publish in the indexed Journals.</span>
@@ -943,34 +997,46 @@ function Home() {
                         </p>
                     </div>
 
-                    {/* Key Dates Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 mt-12">
-                        {[
-                            {
-                                title: "Paper Submission",
-                                icon: FaPaperclip,
-                                date: "October 14, 2024",
-                                color: "#3b82f6", // blue-500
-                            },
-                            {
-                                title: "Acceptance Notification",
-                                icon: FaComment,
-                                date: "October 21, 2024",
-                                color: "#a855f7", // purple-500
-                            },
-                            {
-                                title: "Registration Deadline",
-                                icon: FaAddressCard,
-                                date: "October 21, 2024",
-                                color: "#ec4899", // pink-500
-                            },
-                            {
-                                title: "Conference Dates",
-                                icon: FaCalendarDays,
-                                date: "November 28, 2024",
-                                color: "#f43f5e", // rose-500
-                            },
-                        ].map((item, index) => (
+                    <div className="px-4 mt-12">
+                        <div className="flex justify-center gap-4 mb-10">
+                            {Object.keys(datesData).map((year) => (
+                                <button
+                                    key={year}
+                                    onClick={() => setActiveYear(year)}
+                                    className={`px-6 py-2 rounded-full text-lg poppins-semibold transition-all duration-300 cursor-pointer ${activeYear === year ? "bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg scale-105" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`} >
+                                    {year}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Dates Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {datesData[activeYear].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="group relative bg-gradient-to-b from-[#f0f4ff] to-[#ffffff] backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                                >
+                                    <div className="flex flex-col items-center text-center">
+                                        <div
+                                            className="p-4 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                                            style={{ backgroundColor: `${item.color}20` }}
+                                        >
+                                            <item.icon
+                                                className="text-4xl flex shrink-0"
+                                                style={{ color: item.color }}
+                                            />
+                                        </div>
+                                        <div className="text-2xl poppins-bold text-[#1e1b4b] mb-4">
+                                            {item.title}
+                                        </div>
+                                        <p className="text-gray-600 poppins-medium">{item.date}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 mt-12">
+                        {dates.map((item, index) => (
                             <div
                                 key={index}
                                 className="group relative bg-gradient-to-b from-[#f0f4ff] to-[#ffffff] backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
@@ -979,7 +1045,7 @@ function Home() {
                                     <div
                                         className="p-4 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
                                         style={{
-                                            backgroundColor: `${item.color}20`, // 20% opacity background
+                                            backgroundColor: `${item.color}20`, 
                                         }}
                                     >
                                         <item.icon
@@ -994,30 +1060,29 @@ function Home() {
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
 
-                    {/* Topics Section */}
                     <div className="mt-16">
                         <div className="grid grid-cols-1 sm:grid-cols-2 px-4 lg:grid-cols-3 gap-8">
                             {[
                                 {
                                     title: "Keynote: Future of Big Data",
                                     icon: FaDatabase,
-                                    color: "#3b82f6", // blue-500
+                                    color: "#3b82f6",
                                     description:
                                         "Explore the latest trends and future directions in big data analytics and its impact on industries.",
                                 },
                                 {
                                     title: "Cloud Computing Innovations",
                                     icon: FaCloud,
-                                    color: "#a855f7", // purple-500
+                                    color: "#a855f7",
                                     description:
                                         "Discover cutting-edge advancements in cloud infrastructure and services.",
                                 },
                                 {
                                     title: "AI and Intelligent Systems",
                                     icon: FaRobot,
-                                    color: "#ec4899", // pink-500
+                                    color: "#ec4899",
                                     description:
                                         "Learn about the latest breakthroughs in AI, machine learning, and cognitive computing.",
                                 },
@@ -1030,7 +1095,7 @@ function Home() {
                                         <div
                                             className="w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
                                             style={{
-                                                backgroundColor: `${item.color}1a`, // 10% opacity background
+                                                backgroundColor: `${item.color}1a`,
                                             }}
                                         >
                                             <item.icon
@@ -1060,7 +1125,7 @@ function Home() {
                     <h2 className="text-2xl text-center text-[#1e1b4b] lg:text-[32px] poppins-bold leading-relaxed xl:leading-tight  mb-6 sm:mb-8">Indexed Journals</h2>
                     <p className="text-center inter-medium opacity-85 text-[16px] leading-[30px] max-w-[1000px] mx-auto">The Selective accepted papers of our International Conference on Advances in Big Data, Cloud, and Intelligent Computing will be recommended to publish in the following index & publisher Journals.</p>
                 </div>
-                <Marquee direction='right'  pauseOnClick pauseOnHover>
+                <Marquee direction='right' pauseOnClick pauseOnHover>
                     <div className="  flex  pb-10 pt-10 ">
                         {imageItems.map((item, index) => (
                             <div key={index} className=" flex justify-center mr-10  py-5" >
